@@ -17,6 +17,9 @@ module.exports = ({ platform }, { module, resolve, plugins }) => ({
       },
     ]
   },
+  devServer: {
+    headers: { 'Access-Control-Allow-Origin': '*' }
+  },
   resolve: {
     ...resolve,
     extensions: [`.${platform}.js`, ".native.js", ".js"],

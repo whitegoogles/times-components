@@ -15,6 +15,9 @@ module.exports = {
     extensions: [".web.js", ".js", ".ios.js", ".android.js"],
     mainFields: ["devModule", "dev", "module", "main"],
   },
+  devServer: {
+    headers: { 'Access-Control-Allow-Origin': '*' }
+  },
 
   plugins: [
     // Use the DLL in development.
