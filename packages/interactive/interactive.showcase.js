@@ -11,8 +11,8 @@ export default {
       name: "Web",
       component: () => (
         <Interactive
-          element="times-qwiz-rounds"
           attributes={{ "deck-id": "5761" }}
+          element="times-qwiz-rounds"
           source="//components.timesdev.tools/lib2/times-qwiz-rounds-1.0.0/times-qwiz-rounds.html"
         />
       )
@@ -21,7 +21,12 @@ export default {
       type: "story",
       name: "Native",
       component: () => (
-        <Interactive height={Dimensions.get("window").height} />
+        <Interactive
+          attributes={{'deck-id': '5761'}}
+          element='times-qwiz-rounds'
+          height={Dimensions.get("window").height}
+          source='https://components.timesdev.tools/lib2/times-qwiz-rounds-1.0.0/times-qwiz-rounds.html'
+        />
       )
     }
   ]
