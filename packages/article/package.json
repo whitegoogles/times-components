@@ -76,6 +76,7 @@
     "@times-components/caption": "1.0.10",
     "@times-components/date-publication": "0.16.18",
     "@times-components/image": "2.0.9",
+    "@times-components/interactive": "0.0.1",
     "@times-components/link": "1.0.7",
     "@times-components/markup": "1.0.14",
     "@times-components/provider": "0.37.1",

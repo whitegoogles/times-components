@@ -4,6 +4,7 @@ import { renderTrees } from "@times-components/markup";
 import Video from "@times-components/video";
 import ArticleImage from "@times-components/article-image";
 import PullQuote from "@times-components/pull-quote";
+import Interactive from "@times-components/interactive";
 import BodyParagraph from "./article-body-paragraph";
 import ArticleLink from "./article-link";
 import AspectRatioContainer from "./media-aspect-ratio";
@@ -104,6 +105,16 @@ const ArticleRow = ({ content: { data, index }, onLinkPress }) =>
           {children}
         </ArticleLink>
       );
+    },
+    interactive(key, attributes, children) {
+      return (
+        <Interactive
+          key={key}
+          attributes={attributes.metadata.attributes}
+          element={attributes.metadata.value}
+          source={attributes.url}
+        />
+      )
     }
   });
 

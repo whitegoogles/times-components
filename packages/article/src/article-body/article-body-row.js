@@ -6,6 +6,8 @@ import Video from "@times-components/video";
 import { renderTrees } from "@times-components/markup";
 import ArticleImage from "@times-components/article-image";
 import PullQuote from "@times-components/pull-quote";
+import Interactive from "@times-components/interactive";
+
 import BodyParagraph from "./article-body-paragraph";
 import ArticleLink from "./article-link";
 // To fix a jest coverage issue
@@ -105,6 +107,17 @@ const ArticleRow = ({ content: { data, index }, onLinkPress, onVideoPress }) =>
           <InsetCaption caption={caption} />
         </View>
       );
+    },
+    interactive(key, attributes, children) {
+      return (
+        <Interactive
+          key={key}
+          attributes={attributes.metadata.attributes}
+          element={attributes.metadata.value}
+          source={attributes.url}
+          height={400}
+        />
+      )
     }
   });
 

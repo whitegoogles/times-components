@@ -137,6 +137,18 @@
           "children": []
         },
         {
+          "name": "interactive",
+          "attributes": {
+            "display": "secondary",
+            "metadata": {
+              "value": "times-embed-iframe-max",
+              "attributes": {"ratio": "r16-9", "src": "http%3A%2F%2Fnuk-tnl-deck-prod-static.s3-eu-west-1.amazonaws.com%2Fprojects%2F168411596e4c04bb30eaf83385d15c96.html"}
+            },
+            "url": "//components.timesdev.tools/lib2/times-embed-1.0.0/times-embed-iframe-max.html"
+          },
+          "children": []
+        },
+        {
           "name": "paragraph",
           "attributes": {},
           "children": [
