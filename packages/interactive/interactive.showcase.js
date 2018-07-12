@@ -17,6 +17,7 @@ export default {
             audioPlayer: 'Audio Player',
             cardTimeline: 'Card Timeline',
             chapterHeading: 'Chapter Heading',
+            dataWrapper: 'Data Wrapper for Charts and Maps',
             googleSheetTable: 'Google Sheets table',
             headline: 'Headline',
             inArticlePuff: 'In-article puffs',
@@ -29,6 +30,7 @@ export default {
             quizMultipleRounds: 'Quiz - Multiple Rounds',
             responsiveGraphics: 'Responsive graphics (SVG)',
             storymap: 'Storymap',
+            verticalTimelines: 'Vertical Timelines'
           },
           'storymap'
         );

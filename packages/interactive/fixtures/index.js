@@ -21,6 +21,13 @@ const props = {
     element: 'chapter-header',
     source: '//components.timesdev.tools/lib2/times-chapter-header-1.0.0/chapter-header.html'
   },
+  dataWrapper: {
+    attributes: {
+      'embed-code': "%3Ciframe%20id%3D%22datawrapper-chart-csmgb%22%20src%3D%22%2F%2Fdatawrapper.dwcdn.net%2Fcsmgb%2F2%2F%22%20frameborder%3D%220%22%20allowtransparency%3D%22true%22%20allowfullscreen%3D%22allowfullscreen%22%20webkitallowfullscreen%3D%22webkitallowfullscreen%22%20mozallowfullscreen%3D%22mozallowfullscreen%22%20oallowfullscreen%3D%22oallowfullscreen%22%20msallowfullscreen%3D%22msallowfullscreen%22%20width%3D%22100%25%22%20height%3D%22500%22%3E%3C%2Fiframe%3E%3Cscript%20type%3D%22text%2Fjavascript%22%3Evar%20embedDeltas%3D%7B%22100%22%3A696%2C%22200%22%3A562%2C%22300%22%3A543%2C%22400%22%3A519%2C%22500%22%3A500%2C%22600%22%3A500%2C%22700%22%3A500%2C%22800%22%3A500%2C%22900%22%3A500%2C%221000%22%3A500%7D%2Cchart%3Ddocument.getElementById(%22datawrapper-chart-csmgb%22)%2CchartWidth%3Dchart.offsetWidth%2CapplyDelta%3DembedDeltas%5BMath.min(1000%2C%20Math.max(100*(Math.floor(chartWidth%2F100))%2C%20100))%5D%7C%7C0%2CnewHeight%3DapplyDelta%3Bchart.style.height%3DnewHeight%2B%22px%22%3B%3C%2Fscript%3E"
+    },
+    element: 'times-datawrapper',
+    source: '//components.timesdev.tools/lib2/times-datawrapper-1.1.0/times-datawrapper.html'
+  },
   googleSheetTable: {
     attributes: {
       headline: "Train company satisfaction",
@@ -102,6 +109,11 @@ const props = {
     attributes: {src: 'https%3A%2F%2Fnuk-tnl-deck-prod-static.s3-eu-west-1.amazonaws.com%2Fprojects%2Fce6f311f2548c0e40fbd9beaaa288d32.html'},
     element: 'times-embed-iframe-max',
     source: '//components.timesdev.tools/lib2/times-embed-1.2.0/times-embed-iframe-max.html'
+  },
+  verticalTimelines: {
+    attributes: {'deck-id': "4101"},
+    element: 'vertical-timeline',
+    source: '//components.timesdev.tools/lib2/times-vertical-timeline-2.0.0/vertical-timeline.html'
   }
 };
 
