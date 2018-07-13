@@ -1,6 +1,6 @@
 import { AppRegistry } from "react-native";
 import AuthorProfileView from "./pages/author-profile";
-import ArticleView from "./pages/article";
+import ArticleView from "./pages/simple-article";
 import TopicView from "./pages/topic";
 
 AppRegistry.registerComponent("AuthorProfile", () => AuthorProfileView);

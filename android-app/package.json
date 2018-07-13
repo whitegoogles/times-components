@@ -14,6 +14,7 @@
     "lint": "eslint . && yarn prettier:diff"
   },
   "dependencies": {
+    "@times-components/article": "2.1.17",
     "@times-components/pages": "0.0.3",
     "prop-types": "15.6.0",
     "react": "16.4.1",

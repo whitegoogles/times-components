@@ -65,12 +65,16 @@ export const query = gql`
         url
       }
       relatedArticlesLayout {
-        template
+        ... on Default {
+          template
+        }
         ... on LeadAndTwo {
           main
+          template
         }
         ... on OpinionAndTwo {
           main
+          template
         }
       }
       topics {
