@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import { Button, Dimensions, Platform, View, WebView } from "react-native";
+import { Button, Dimensions, Linking, Platform, View, WebView } from "react-native";
 import PropTypes from "prop-types";
-// import iFrameRezize from 'iframe-resizer';
 
 const htmlBuilder = ({attributes, element, source}) => {
   const elementAttributes = Object.keys(attributes).reduce((acc, key) => `${acc} ${key}=${attributes[key]}`, '');
   let id = 'iframe-wrapper';
 
+  // Need a list of container ids for each interactive in order to figure out height.
   switch(element){
     case 'times-qwiz-rounds': id = 'qwiz-rounds'; break;
   }
@@ -83,6 +83,18 @@ class Interactive extends Component {
     this.state = {
       height: 400
     }
+    this.handleNavigationStateChange = this.handleNavigationStateChange.bind(this);
+  }
+
+  openURLInBrowser(url) {
+    return Linking.canOpenURL(url)
+      .then(supported => {
+        if (!supported) {
+          return console.error("Cant open url", url); // eslint-disable-line no-console
+        }
+        return Linking.openURL(url);
+      })
+      .catch(err => console.error("An error occurred", err)); // eslint-disable-line no-console
   }
 
   onMessage(data) {
@@ -92,7 +104,10 @@ class Interactive extends Component {
   }
 
   handleNavigationStateChange(data) {
-    // alert(JSON.stringify(data));
+    if(!data.url.includes('data:text/html') && data.url.includes("http")){
+      // Need to handle native routing when something is clicked.
+      this.openURLInBrowser(data.url);
+    }
   }
 
   render(){
@@ -111,10 +126,9 @@ class Interactive extends Component {
             })
           }}
           onLoadEnd={() => this.webview.postMessage("Hello from RN")}
-          // onNavigationStateChange={this.handleNavigationStateChange}
+          onNavigationStateChange={this.handleNavigationStateChange}
           {...postMessageBugWorkaround}
         />
-        {/* <Button title="Post message to Webview" onPress={() => this.webview.postMessage("Hello from RN")} /> */}
       </View>
   );
   }

@@ -115,7 +115,6 @@ const ArticleRow = ({ content: { data, index }, onLinkPress, onVideoPress }) =>
           attributes={attributes.metadata.attributes}
           element={attributes.metadata.value}
           source={attributes.url}
-          height={400}
         />
       )
     }
