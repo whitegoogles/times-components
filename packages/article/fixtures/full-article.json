@@ -269,6 +269,18 @@
           ]
         },
         {
+          "name": "interactive",
+          "attributes": {
+            "display": "secondary",
+            "metadata": {
+              "value": "times-qwiz-rounds",
+              "attributes": {"deck-id": "5761"}
+            },
+            "url": "//components.timesdev.tools/lib2/times-qwiz-rounds-1.0.0/times-qwiz-rounds.html"
+          },
+          "children": []
+        },
+        {
           "name": "image",
           "attributes": {
             "display": "inline",

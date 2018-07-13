@@ -5,11 +5,18 @@ import PropTypes from "prop-types";
 
 const htmlBuilder = ({attributes, element, source}) => {
   const elementAttributes = Object.keys(attributes).reduce((acc, key) => `${acc} ${key}=${attributes[key]}`, '');
+  let id = 'iframe-wrapper';
+
+  switch(element){
+    case 'times-qwiz-rounds': id = 'qwiz-rounds'; break;
+  }
+
   return `
 <html>
   <head>
     <title>${element}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://cdn.jsdelivr.net/npm/resize-observer-polyfill@1.5.0/dist/ResizeObserver.min.js"></script>
   </head>
   <body>
       <link rel="import" href="https:${source}" />
@@ -33,14 +40,27 @@ const htmlBuilder = ({attributes, element, source}) => {
           });
 
           function getHeight() {
-            var height = document.getElementById('iframe-wrapper').offsetHeight;
+            var height = document.getElementById('${id}').offsetHeight;
             if(window.reactBridgePostMessage) {
               window.reactBridgePostMessage(height)
             } else {
               window.postMessage(height);
             }
-
           }
+
+          var ro = new ResizeObserver( entries => {
+            for (let entry of entries) {
+              const cr = entry.contentRect;
+              if(window.reactBridgePostMessage) {
+                window.reactBridgePostMessage(cr.height);
+              } else {
+                window.postMessage(cr.height);
+              }
+            }
+          });
+
+          var observableElement = document.querySelector('#${id}');
+          ro.observe(observableElement);
 
       </script>
   </body>
@@ -61,7 +81,7 @@ class Interactive extends Component {
   constructor(){
     super();
     this.state = {
-      height: 0
+      height: 400
     }
   }
 
@@ -69,6 +89,10 @@ class Interactive extends Component {
     const heightReceived = parseInt(data.nativeEvent.data);
     const height = heightReceived + 20;
     this.setState({height});
+  }
+
+  handleNavigationStateChange(data) {
+    // alert(JSON.stringify(data));
   }
 
   render(){
@@ -87,6 +111,7 @@ class Interactive extends Component {
             })
           }}
           onLoadEnd={() => this.webview.postMessage("Hello from RN")}
+          // onNavigationStateChange={this.handleNavigationStateChange}
           {...postMessageBugWorkaround}
         />
         {/* <Button title="Post message to Webview" onPress={() => this.webview.postMessage("Hello from RN")} /> */}
