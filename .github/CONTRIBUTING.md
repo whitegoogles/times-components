@@ -73,19 +73,19 @@ npm
 
 ## Component categories
 
-When creating a new component you should specify the most suitable category in 
-the stories file. 
+When creating a new component you should specify the most suitable category in
+the stories file.
 The current categories are:
 
 * <b>Primitive</b> - components that are the basic building blocks from which
 other components can be composed
 * <b>Composed</b> - components that are composed of Primitives
-* <b>Pages</b> - complex page level components made up from multiple 
+* <b>Pages</b> - complex page level components made up from multiple
 Composed and Primitive components
 * <b>Helpers</b> - tools, utilities and helpers
 
 For example to add
-a `Slider` component to the the `Composed` category you just prefix the category 
+a `Slider` component to the the `Composed` category you just prefix the category
 name in the `slider.stories.js` file.
 
 ```
@@ -121,10 +121,6 @@ we are using the storybook app. If you have not installed it, you can do so by
 running `yarn ios`. You will need to terminate the server that is run with
 this as fructose will run its own at the time of testing. As long as you do not
 delete the app, you will only have to build the app once.
-
-If you run `npm run functional-test:ios` in the root directory it will run
- fructose tests for all of the components. This will similarly work for android
- and web.
 
 [Dextrose](https://github.com/newsuk/dextrose) is a visual snapshotting tool designed to make the visual inspection of
  components easier.
