@@ -70,7 +70,7 @@ const ArticleListItem = props => {
     labelProps: {
       title: label,
       color: colours.section[section] || colours.section.default,
-      isVideo: leadAsset && leadAsset.type === "Video"
+      isVideo: leadAsset && leadAsset.__typename === "Video" // eslint-disable-line no-underscore-dangle
     }
   };
 

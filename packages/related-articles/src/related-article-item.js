@@ -106,7 +106,7 @@ const RelatedArticleItem = ({
           )}
           labelProps={{
             color: colours.section[section] || colours.section.default,
-            isVideo: leadAsset && leadAsset.type === "Video",
+            isVideo: leadAsset && leadAsset.__typename === "Video", // eslint-disable-line no-underscore-dangle
             title: label
           }}
         />
