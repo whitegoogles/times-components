@@ -2,6 +2,7 @@ import "react-native";
 import React from "react";
 import { Dimensions, View } from "react-native";
 import Interactive from "./src/interactive";
+import InteractiveChris from "./src/interactive-chris";
 import props from "./fixtures";
 
 export default {
@@ -49,6 +50,15 @@ export default {
             })}
           </View>
         );
+      }
+    },
+    {
+      type: "story",
+      name: "Chris Lambda",
+      component: () => {
+        return (
+          <InteractiveChris />
+        )
       }
     }
   ]
