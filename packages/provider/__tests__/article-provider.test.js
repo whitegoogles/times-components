@@ -60,6 +60,19 @@ const mocks = [
         items: [
           {
             __typename: "Tile",
+            leadAsset: {
+              id: "aba8051d-2793-4056-be0e-9d268b2e62eb",
+              title: "Uber and out: app hits New York’s cab king",
+              crop169: {
+                url: "http://nu-cps-imgsrv-tnl-dev-webapp.elb.tnl-dev.ntch.co.uk/imageserver/image/d25bfcbabb483488861e9b35d64be66224fd4db1.jpg?crop=1000%2C563%2C0%2C220",
+                __typename: "Crop"
+              },
+              crop32: {
+                url: "http://nu-cps-imgsrv-tnl-dev-webapp.elb.tnl-dev.ntch.co.uk/imageserver/image/d25bfcbabb483488861e9b35d64be66224fd4db1.jpg?crop=970%2C647%2C15%2C179",
+                __typename: "Crop"
+              },
+              __typename: "Image",
+            },
             article: {
               id: "ea16d744-cb4a-11e4-a202-50ac5def393a",
               headline: "Related Headline",

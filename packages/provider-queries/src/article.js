@@ -27,6 +27,7 @@ export default gql`
         ... on StandardSlice {
           sliceName: __typename
           items {
+            ...leadAssetProps
             article {
               ...relatedProps
             }
@@ -35,16 +36,19 @@ export default gql`
         ... on LeadOneAndTwoSlice {
           sliceName: __typename
           lead {
+            ...leadAssetProps
             article {
               ...relatedProps
             }
           }
           support1 {
+            ...leadAssetProps
             article {
               ...relatedProps
             }
           }
           support2 {
+            ...leadAssetProps
             article {
               ...relatedProps
             }
@@ -53,16 +57,19 @@ export default gql`
         ... on OpinionOneAndTwoSlice {
           sliceName: __typename
           opinion {
+            ...leadAssetProps
             article {
               ...relatedProps
             }
           }
           support1 {
+            ...leadAssetProps
             article {
               ...relatedProps
             }
           }
           support2 {
+            ...leadAssetProps
             article {
               ...relatedProps
             }
@@ -87,6 +94,28 @@ export default gql`
     }
     id
     title
+  }
+
+  fragment videoProps on Video {
+    brightcoveAccountId
+    brightcovePolicyKey
+    brightcoveVideoId
+    posterImage {
+      ...imageProps
+    }
+  }
+
+  fragment leadAssetProps on Tile {
+    leadAsset {
+      ... on Video {
+        ...videoProps
+        type: __typename
+      }
+      ... on Image {
+        type: __typename
+        ...imageProps
+      }
+    }
   }
 
   fragment articleProps on Article {
