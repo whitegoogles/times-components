@@ -1,6 +1,5 @@
 /* eslint-env browser */
 import { Component } from "react";
-import { normaliseWidth } from "@times-components/utils";
 import PropTypes from "prop-types";
 
 class LazyLoad extends Component {
@@ -35,8 +34,7 @@ class LazyLoad extends Component {
 
   componentDidMount() {
     const newState = {
-      clientHasRendered: true,
-      clientWidth: normaliseWidth(window.clientWidth)
+      clientHasRendered: true
     };
 
     // eslint-disable-next-line react/no-did-mount-set-state

@@ -50,7 +50,6 @@
     "webpack-cli": "2.1.4"
   },
   "dependencies": {
-    "@times-components/utils": "4.0.1",
     "prop-types": "15.6.2"
   },
   "peerDependencies": {

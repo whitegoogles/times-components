@@ -22,6 +22,9 @@ class ArticleList extends Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      listWidth: 0
+    };
     this.advertPosition = 4;
     this.getImageSize = this.getImageSize.bind(this);
   }
@@ -36,7 +39,7 @@ class ArticleList extends Component {
     }
 
     if (!isObserving) {
-      return this.props.clientWidth;
+      return this.state.listWidth;
     }
 
     return node ? normaliseWidth(node.clientWidth) : null;
