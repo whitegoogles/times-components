@@ -7,7 +7,7 @@ import styles from "./styles";
 const ArticleListPagination = props => (
   <View style={styles.paginationContainer}>
     <View style={styles.paginationSpacing}>
-      <Pagination {...props} generatePageLink={pageNum => `?page=${pageNum}`} />
+      <Pagination generatePageLink={pageNum => `?page=${pageNum}`} {...props} />
     </View>
   </View>
 );
