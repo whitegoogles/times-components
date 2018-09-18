@@ -125,6 +125,7 @@ class ArticleList extends Component {
       count,
       emptyStateMessage,
       error,
+      generatePageLink,
       imageRatio,
       onNext,
       onPrev,
@@ -155,6 +156,7 @@ class ArticleList extends Component {
         }}
         page={page}
         pageSize={pageSize}
+        generatePageLink={generatePageLink}
       />
     );
 
